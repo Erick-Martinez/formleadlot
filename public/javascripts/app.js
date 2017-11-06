@@ -29,19 +29,17 @@ function setupLightning(callback) {
 	    // Transform the URL for Lightning
 	    var url = oauth.instanceUrl.replace("my.salesforce", "lightning.force");
 
-	    $Lightning.use(appName, 
-	        function() {
-				_lightningReady = true;
-				document.getElementById("chatterFeedButton").style.display = "";
-				if (typeof callback === "function") {
-					callback();
-				}
+	    $Lightning.use("c:Publicleadform", function() {
+                 $Lightning.createComponent("c:FormWeb", {},
+                     "FormularioLead",
+                     );
+             });
 	        }, url, oauth.access_token);
 	}
 }
 
 function createChatterFeed(type, subjectId) {
     setupLightning(function() {
-		$Lightning.createComponent("c:FormWeb", {type: type, subjectId: subjectId}, "chatterFeed"); 
+		$Lightning.createComponent("c:FormWeb", {type: type, subjectId: subjectId}, "FormularioLead"); 
     });
 }
