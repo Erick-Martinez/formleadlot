@@ -42,6 +42,6 @@ function setupLightning(callback) {
 
 function createChatterFeed(type, subjectId) {
     setupLightning(function() {
-		$Lightning.createComponent("c:FormWeb", {type: type, subjectId: subjectId}, "FormularioLead"); 
+		$Lightning.createComponent("c:FormWeb", {}, "FormularioLead");
     });
 }
