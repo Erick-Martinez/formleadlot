@@ -39,5 +39,5 @@ try {
 	https.createServer(options, app).listen(https_port);
 	console.log("Server listening for HTTPS connections on port ", https_port);
 } catch (e) {
-	console.error("Security certs not found, HTTPS not available");
+	console.error("Security certs not encontrados, HTTPS not available");
 }
