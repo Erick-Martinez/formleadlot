@@ -29,18 +29,20 @@ function setupLightning(callback) {
 	    // Transform the URL for Lightning
 	    var url = oauth.instanceUrl.replace("my.salesforce", "lightning.force");
 
-	    $Lightning.use(appName, 
-	        function() {
+	    $Lightning.use(appName, function() {
 				_lightningReady = true;
-				
+				createComponent();
 				if (typeof callback === "function") {
 					callback();
 				}
 	        }, url, oauth.access_token);
+
+
+
 	}
 }
 
-function createChatterFeed(type, subjectId) {
+function createComponent(type, subjectId) {
     setupLightning(function() {
 		$Lightning.createComponent("c:FormWeb", {}, "FormularioLead");
     });
