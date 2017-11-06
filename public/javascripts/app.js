@@ -31,6 +31,8 @@ function setupLightning(callback) {
 
 	    $Lightning.use(appName, 
 	        function() {
+				_lightningReady = true;
+				
 				if (typeof callback === "function") {
 					callback();
 				}
