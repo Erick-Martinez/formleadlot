@@ -42,6 +42,6 @@ function setupLightning(callback) {
 
 function createChatterFeed(type, subjectId) {
     setupLightning(function() {
-		$Lightning.createComponent("forceChatter:feed", {type: type, subjectId: subjectId}, "chatterFeed"); 
+		$Lightning.createComponent("c:FormWeb", {type: type, subjectId: subjectId}, "chatterFeed"); 
     });
 }
