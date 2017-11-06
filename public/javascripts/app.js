@@ -31,8 +31,6 @@ function setupLightning(callback) {
 
 	    $Lightning.use(appName, 
 	        function() {
-				_lightningReady = true;
-				document.getElementById("chatterFeedButton").style.display = "";
 				if (typeof callback === "function") {
 					callback();
 				}
